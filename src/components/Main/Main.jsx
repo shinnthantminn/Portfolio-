@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { Nav, Home } from "./";
 import { useNavigate } from "react-router-dom";
+import One from "../One";
+import Two from "../Two";
 
 const Main = () => {
   const nav = useNavigate();
@@ -13,6 +15,8 @@ const Main = () => {
     <div className="w-full">
       <Nav />
       <Home />
+      <One />
+      <Two />
     </div>
   );
 };

@@ -7,6 +7,10 @@
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .menu {
   @apply relative after:content-[''] after:absolute after:w-full after:bg-red-500 after:h-[2px] after:bottom-[-3px] after:left-0 after:duration-300 after:scale-x-0 hover:after:scale-x-[1];
 }
@@ -20,5 +24,5 @@
 }
 
 .change {
-  @apply absolute z-[1000] top-0 w-full bg-[rgba(255,255,255,0.75)] backdrop-blur-[20px] backdrop-contrast-[130%] flex flex-wrap items-center justify-between px-3 sm:px-7 py-7 font-['MuseoModerno'] duration-300 ease-in;
+  @apply fixed z-[1000] top-0 w-full bg-[rgba(255,255,255,0.75)] backdrop-blur-[20px] backdrop-contrast-[130%] flex flex-wrap items-center justify-between px-3 sm:px-7 py-7 font-['MuseoModerno'] duration-300 ease-in;
 }

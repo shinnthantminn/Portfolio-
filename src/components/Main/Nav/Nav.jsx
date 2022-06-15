@@ -1,17 +1,26 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
   const [toggle, setToggle] = useState(false);
+  const [style, setStyle] = useState("change");
+  const touch = useSelector((state) => state.waypoint);
+
+  useEffect(() => {
+    if (toggle) {
+      setStyle("change shadow");
+    } else {
+      setStyle("change -translate-y-[205px] lg:-translate-y-[0]");
+    }
+
+    if (touch === false) {
+      setStyle((pre) => pre + " border-b shadow ");
+    }
+  }, [toggle, touch]);
 
   return (
-    <nav
-      className={
-        toggle
-          ? "change shadow"
-          : "change -translate-y-[205px] lg:-translate-y-[0]"
-      }
-    >
+    <motion.nav className={style}>
       {/*Logo Header*/}
       <motion.div
         initial={{ x: -300 }}
@@ -83,7 +92,7 @@ const Nav = () => {
         className="Toggle"
       >
         <li>
-          <a href="" className="menu">
+          <a href="#home" className="menu ">
             Home
           </a>
         </li>
@@ -108,7 +117,7 @@ const Nav = () => {
           </a>
         </li>
       </motion.ul>
-    </nav>
+    </motion.nav>
   );
 };
 

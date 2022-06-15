@@ -2,9 +2,11 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { Main, Intro } from "./components";
 import { AnimatePresence } from "framer-motion";
 import Error404 from "./components/404/Error404";
+import { useSelector } from "react-redux";
 
 function App() {
   const location = useLocation(); //For page transition motion
+  const data = useSelector((state) => state.waypoint);
   return (
     <div className={""}>
       <AnimatePresence exitBeforeEnter={true}>
