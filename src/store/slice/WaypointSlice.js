@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = false;
+const initialState = null;
 
 const WayPointSlice = createSlice({
   name: "waypoint",
   initialState,
   reducers: {
-    Touch: (state) => {
-      return (state = !state);
+    Touch: (state,action) => {
+      return (state = action.payload);
     },
   },
 });

@@ -1,22 +1,23 @@
-import { useEffect } from "react";
-import { Nav, Home } from "./";
-import { useNavigate } from "react-router-dom";
+import { Home, Nav } from "./";
 import One from "../One";
 import Two from "../Two";
+import { useSelector } from "react-redux";
 
 const Main = () => {
-  const nav = useNavigate();
-
-  useEffect(() => {
-    document.title = "Terry | Home";
-  }, []);
+  const Theme = useSelector((state) => state.Theme);
 
   return (
-    <div className="w-full">
-      <Nav />
-      <Home />
-      <One />
-      <Two />
+    <div
+      className={
+        Theme ? "w-full overflow-hidden " : "w-full overflow-hidden dark"
+      }
+    >
+      <div className="w-full duration-300 dark:bg-black">
+        <Nav />
+        <Home />
+        <One />
+        <Two />
+      </div>
     </div>
   );
 };

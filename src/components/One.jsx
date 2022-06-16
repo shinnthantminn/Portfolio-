@@ -4,7 +4,9 @@ import { useEffect } from "react";
 const One = () => {
   const { ref, inView } = useInView();
   useEffect(() => {
-    // console.log("in View", inView);
+    if (inView) {
+      document.title = "Terry | One";
+    }
   }, [inView]);
   return (
     <div

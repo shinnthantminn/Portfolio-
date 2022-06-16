@@ -12,17 +12,13 @@ html {
 }
 
 .menu {
-  @apply relative after:content-[''] after:absolute after:w-full after:bg-red-500 after:h-[2px] after:bottom-[-3px] after:left-0 after:duration-300 after:scale-x-0 hover:after:scale-x-[1];
+  @apply relative after:content-[''] after:absolute after:w-full after:bg-red-500 after:h-[2px] after:rounded after:bottom-[-3px] after:left-0 after:duration-300 after:scale-x-0 hover:after:scale-x-[1];
 }
 
 .mobile {
   @apply w-full h-[2.1px] bg-red-500 duration-300;
 }
 
-.Toggle {
-  @apply w-[100%] text-center space-y-3 mb-5 lg:mb-0 lg:space-y-0 lg:w-fit order-1 lg:order-2 lg:flex lg:space-x-10 text-xl lg:mr-10;
-}
-
 .change {
-  @apply fixed z-[1000] top-0 w-full bg-[rgba(255,255,255,0.75)] backdrop-blur-[20px] backdrop-contrast-[130%] flex flex-wrap items-center justify-between px-3 sm:px-7 py-7 font-['MuseoModerno'] duration-300 ease-in;
+  @apply flex flex-wrap duration-300 ease-linear font-[MuseoModerno] fixed bottom-0 shadow px-3 sm:px-10 lg:py-5  z-[1000] justify-between items-center w-full bg-[rgba(255,255,255,0.4)]  backdrop-blur-[5px] rounded-[10px] border-[1px] border-[rgba(255,255,255,0.18)];
 }
